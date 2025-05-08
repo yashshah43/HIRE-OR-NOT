@@ -1,4 +1,4 @@
-# 🧠 Hire Or Not – AI-Based Hiring Recommendation System
+# Hire Or Not – AI-Based Hiring Recommendation System
 
 ![License](https://img.shields.io/badge/license-MIT-green) ![Python](https://img.shields.io/badge/Python-3.10-blue)
 
