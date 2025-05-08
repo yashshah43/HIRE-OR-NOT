@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Hiring Prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="age">Age (20-50):</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="experience">Experience (0-15 years):</label>
+            <input type="number" id="experience" name="experience" required>
+
+            <label for="previous_companies">Previous Companies Worked (1-5):</label>
+            <input type="number" id="previous_companies" name="previous_companies" required>
+
+            <label for="interview_score">Interview Score (0-100):</label>
+            <input type="number" id="interview_score" name="interview_score" required>
+
+            <label for="skill_score">Skill Score (0-100):</label>
+            <input type="number" id="skill_score" name="skill_score" required>
+
+            <label for="personality_score">Personality Score (0-100):</label>
+            <input type="number" id="personality_score" name="personality_score" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+
+            <label for="education">Education Level:</label>
+            <select id="education" name="education">
+                <option value="1">B.Sc.</option>
+                <option value="2">B-Tech</option>
+                <option value="3">Master's</option>
+                <option value="4">PhD</option>
+            </select>
+
+            <label for="recruitment_strategy">Recruitment Strategy:</label>
+            <select id="recruitment_strategy" name="recruitment_strategy">
+                <option value="1">Aggressive</option>
+                <option value="2">Moderate</option>
+                <option value="3">Conservative</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h3>Prediction: {{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
